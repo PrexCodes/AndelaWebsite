@@ -4,6 +4,7 @@ import andela from "../../assets/AND-Logo-Lockup-Green-Black-RGB.svg";
 import andelaw from "../../assets/AND-Logo-White.svg";
 import { BsChevronDown } from "react-icons/bs";
 import Button1 from "../static/Button1";
+import {NavLink} from 'react-router-dom'
 
 const Header = () => {
   const [scroll, setScroll] = useState<boolean>(true);
@@ -31,9 +32,9 @@ const Header = () => {
           <Main1>
             <Logo src={andela} />
             <NavBar>
-              <Nav> For Technology Experts</Nav>
+              <NavLinks to={"/"} style={{color: 'black'}}> <Nav> For Technology Experts</Nav> </NavLinks>
               <Nav> Business </Nav>
-              <Nav> Enterprise </Nav>
+              <NavLinks to={"/enterprise"} style={{color: 'black'}}> <Nav> Enterprise </Nav></NavLinks>
             </NavBar>
             <NavBar>
               <Nav> Apply for Jobs </Nav>
@@ -51,9 +52,9 @@ const Header = () => {
           <Main1>
             <Logo src={andelaw} />
             <NavBar>
-              <Nav> For Technology Experts</Nav>
+              <NavLinks to={"/"} style={{color: 'white'}}> <Nav> For Technology Experts</Nav> </NavLinks>
               <Nav> Business </Nav>
-              <Nav> Enterprise </Nav>
+              <NavLinks to={"/enterprise"} style={{color: 'white'}}> <Nav> Enterprise </Nav></NavLinks>
             </NavBar>
             <NavBar>
               <Nav> Apply for Jobs </Nav>
@@ -72,6 +73,10 @@ const Header = () => {
 };
 
 export default Header;
+
+const NavLinks = styled(NavLink)`
+text-decoration: none;
+`
 
 const IconDown = styled(BsChevronDown)`
   font-size: 12px;
